@@ -1,0 +1,16 @@
+Question 1: The three phases of a frame
+1. Composition: Decides what UI elements should exist and builds the UI tree.
+2. Layout: Measures the children, determines sizes, and positions elements.
+3. Drawing: Renders the UI elements on the screen.
+
+What are the two steps of Layout?
+1. Measurement: Measure the children and determine their sizes.
+2. Placement: Decide where each child should be positioned.
+The parent also determines its own size between measuring its children and placing them.
+
+Why does LazyColumn depend on its parent's layout?
+A LazyColumn only needs to compose the items that are relevant to its visible area. It needs information about the available space from its parent's layout to determine which items to display.
+
+Why is Compose fast?
+Compose uses smart skipping and invalidation. It tracks state reads and can skip work that doesn't need to be repeated. A state change can restart the relevant scope or phase instead of repeating the entire UI process.
+
